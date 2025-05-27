@@ -1,5 +1,7 @@
 #ifndef IBU_H
 #define IBU_H
+#include <vector>
+
 class ibu
 {
 public:
@@ -10,27 +12,24 @@ public:
     {
         cout << "ibu \"" << nama << "\" ada\n";
     }
-  
     ~ibu()
     {
-        cout << "ibu \"" << nama << "\" tidak ada\n";
+        cout << "ibu \" " << nama << "\" tidak ada\n";
     }
-
-    void tambahAnak(anak *);
+    void tambahanAnak(anak *);
     void cetakAnak();
 };
 void ibu::tambahAnak(anak *pAnak)
-
-{ daftar_anak.push_back(pAnak);}
-
-
+{
+    daftar_anak.push_back(pAnak);
+}
 void ibu::cetakAnak()
 {
-    cout << "daftar Anak dari Ibu \"" << this->nama << "\":\n";
+    cout << "Daftar Anak dari ibu \"" << this->nama << "\":\n";
 
-    for (auto &a : daftar_anak)
+    for (int i = 0; i < daftar_anak.size(); i++)
     {
-        cout << a->nama << "\n";
+        cout << daftar_anak[i]->nama << endl;
     }
     cout << endl;
 }
